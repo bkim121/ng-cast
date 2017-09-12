@@ -7,8 +7,14 @@ angular.module('video-player')
     this.currentVideo = exampleVideoData[0];
     console.log(this.currentVideo);
     
-    this.selectVideo = function() {
-      console.log(this);
+    this.selectVideo = (url) => {
+      console.log(url);
+      console.log(this.videos);
+      for (var i = 0; i < this.videos.length; i++) {
+        if (url === this.videos[i].id.videoId) {
+          this.currentVideo = exampleVideoData[i];
+        }
+      }
     };                                           
   },
 
